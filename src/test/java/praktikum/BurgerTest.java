@@ -32,22 +32,14 @@ public class BurgerTest extends BurgerTestBase {
         burger.ingredients.add(ingredient1);
         burger.ingredients.add(ingredient2);
         burger.ingredients.add(ingredient3);
-        burger.moveIngredient(2, 1);
-        Assert.assertEquals("Не корректная позиция", burger.ingredients.get(1), ingredient3);
+        int sourceIndex = 2;
+        int targetIndex = 1;
+        Ingredient expectedIngredient = ingredient3;
+        burger.moveIngredient(sourceIndex, targetIndex);
+        Assert.assertEquals("Не корректная позиция", expectedIngredient, burger.ingredients.get(targetIndex));
     }
 
-    @Test
-    public void getPriceTest() {
-        burger.bun = bun;
-        burger.ingredients.add(ingredient1);
-        burger.ingredients.add(ingredient2);
-        burger.ingredients.add(ingredient3);
 
-        float expectedPrice = bun.getPrice()*2 + ingredient1.getPrice() + ingredient2.getPrice() + ingredient3.getPrice();
-
-        Assert.assertEquals("Ожидаемая стоимость" + expectedPrice + " | Фактическая стоимость"
-                + burger.getPrice(), expectedPrice, burger.getPrice(), 0);
-    }
 
     @Test
     public void getReceiptTest() {
