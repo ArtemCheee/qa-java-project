@@ -16,11 +16,11 @@ public class BurgerTestBase {
     @Mock
     protected Bun bun;
     @Mock
-    protected Ingredient ingredient1;
+    protected Ingredient firstIngredient;
     @Mock
-    protected Ingredient ingredient2;
+    protected Ingredient secondIngredient;
     @Mock
-    protected Ingredient ingredient3;
+    protected Ingredient thirdIngredient;
 
     @Before
     public void createBurgerWithMocks() {
@@ -29,17 +29,17 @@ public class BurgerTestBase {
         when(bun.getName()).thenReturn("black bun");
         when(bun.getPrice()).thenReturn(100F);
 
-        when(ingredient1.getType()).thenReturn(IngredientType.FILLING);
-        when(ingredient1.getName()).thenReturn("sausage");
-        when(ingredient1.getPrice()).thenReturn(300F);
+        when(firstIngredient.getType()).thenReturn(IngredientType.FILLING);
+        when(firstIngredient.getName()).thenReturn("sausage");
+        when(firstIngredient.getPrice()).thenReturn(300F);
 
-        when(ingredient2.getType()).thenReturn(IngredientType.SAUCE);
-        when(ingredient2.getName()).thenReturn("hot sauce");
-        when(ingredient2.getPrice()).thenReturn(100F);
+        when(secondIngredient.getType()).thenReturn(IngredientType.SAUCE);
+        when(secondIngredient.getName()).thenReturn("hot sauce");
+        when(secondIngredient.getPrice()).thenReturn(100F);
 
-        when(ingredient3.getType()).thenReturn(IngredientType.FILLING);
-        when(ingredient3.getName()).thenReturn("cutlet");
-        when(ingredient3.getPrice()).thenReturn(100F);
+        when(thirdIngredient.getType()).thenReturn(IngredientType.FILLING);
+        when(thirdIngredient.getName()).thenReturn("cutlet");
+        when(thirdIngredient.getPrice()).thenReturn(100F);
 
 
     }
